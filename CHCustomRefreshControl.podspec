@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CHCustomRefreshControl"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "CHCustomRefreshControl is a customized refresh control, neat"
 
   s.description  = <<-DESC
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT License"
   s.author       = "Cecilia Humlelu"
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/TokyoBirdy/customRefreshControl.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/TokyoBirdy/customRefreshControl.git", :tag => "0.0.3" }
   s.source_files = "CHCustomRefreshControl/*.{h,m}"
   s.requires_arc = true
 
