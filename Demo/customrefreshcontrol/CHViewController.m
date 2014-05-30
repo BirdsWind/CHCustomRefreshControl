@@ -7,10 +7,10 @@
 //
 
 #import "CHViewController.h"
-#import "CHRefreshControl.h"
+#import "CHCustomRefreshControl.h"
 
 @interface CHViewController () <CHRefreshControlDelegate>
-@property CHRefreshControl *refreshControl;
+@property CHCustomRefreshControl *refreshControl;
 @property BOOL reloading;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, assign) CGFloat lastContentOffset;
@@ -25,7 +25,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     if (self.refreshControl == nil) {
-		self.refreshControl  = [[CHRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableview.bounds.size.height, self.view.frame.size.width, self.tableview.bounds.size.height)];
+		self.refreshControl  = [[CHCustomRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableview.bounds.size.height, self.view.frame.size.width, self.tableview.bounds.size.height)];
 		self.refreshControl .delegate = self;
 		[self.tableview addSubview:self.refreshControl ];
 	}
@@ -100,14 +100,14 @@
 #pragma mark -
 #pragma mark EGORefreshTableHeaderDelegate Methods
 
-- (void)chRefreshControlDelegateDidTriggerRefresh:(CHRefreshControl*)view{
+- (void)chRefreshControlDelegateDidTriggerRefresh:(CHCustomRefreshControl*)view{
 	
 	[self reloadTableViewDataSource];
 	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
 	
 }
 
-- (BOOL)chRefreshControlDelegateDataSourceIsLoading:(CHRefreshControl*)view{
+- (BOOL)chRefreshControlDelegateDataSourceIsLoading:(CHCustomRefreshControl*)view{
 	
 	return _reloading; // should return if data source model is reloading
 	

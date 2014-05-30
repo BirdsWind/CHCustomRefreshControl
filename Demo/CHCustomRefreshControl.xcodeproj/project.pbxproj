@@ -22,7 +22,7 @@
 		9473EB271936032E00D29495 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9473EB251936032E00D29495 /* InfoPlist.strings */; };
 		9473EB291936032E00D29495 /* customrefreshcontrolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9473EB281936032E00D29495 /* customrefreshcontrolTests.m */; };
 		9473EB361936043900D29495 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EB351936043900D29495 /* QuartzCore.framework */; };
-		94C43A961938B4C800AB6734 /* CHRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C43A951938B4C800AB6734 /* CHRefreshControl.m */; };
+		94C43A961938B4C800AB6734 /* CHCustomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C43A951938B4C800AB6734 /* CHCustomRefreshControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,8 @@
 		9473EB261936032E00D29495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9473EB281936032E00D29495 /* customrefreshcontrolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customrefreshcontrolTests.m; sourceTree = "<group>"; };
 		9473EB351936043900D29495 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		94C43A941938B4C800AB6734 /* CHRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHRefreshControl.h; path = ../CHCustomRefreshControl/CHRefreshControl.h; sourceTree = "<group>"; };
-		94C43A951938B4C800AB6734 /* CHRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHRefreshControl.m; path = ../CHCustomRefreshControl/CHRefreshControl.m; sourceTree = "<group>"; };
+		94C43A941938B4C800AB6734 /* CHCustomRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCustomRefreshControl.h; sourceTree = "<group>"; };
+		94C43A951938B4C800AB6734 /* CHCustomRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCustomRefreshControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +163,8 @@
 		94C43A931938B4C800AB6734 /* CHCustomRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
-				94C43A941938B4C800AB6734 /* CHRefreshControl.h */,
-				94C43A951938B4C800AB6734 /* CHRefreshControl.m */,
+				94C43A941938B4C800AB6734 /* CHCustomRefreshControl.h */,
+				94C43A951938B4C800AB6734 /* CHCustomRefreshControl.m */,
 			);
 			name = CHCustomRefreshControl;
 			path = ../../CHCustomRefreshControl;
@@ -271,7 +271,7 @@
 				9473EB0A1936032E00D29495 /* main.m in Sources */,
 				9473EB0E1936032E00D29495 /* CHAppDelegate.m in Sources */,
 				9473EB141936032E00D29495 /* CHViewController.m in Sources */,
-				94C43A961938B4C800AB6734 /* CHRefreshControl.m in Sources */,
+				94C43A961938B4C800AB6734 /* CHCustomRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Cecilia Humlelu. All rights reserved.
 //
 
-#import "CHRefreshControl.h"
+#import "CHCustomRefreshControl.h"
 #import <QuartzCore/QuartzCore.h>
 
 
 #define IMAGERADIUS 12
 CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 
-@interface CHRefreshControl()
+@interface CHCustomRefreshControl()
 
 @property CALayer *layerGroup;
 @property CALayer *imageLogo;
@@ -25,7 +25,7 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 - (void)setState:(CHPullRefreshState)aState withScrollView:(UIScrollView *)ascrollView withLastContentOffset:(CGFloat)lastContentOffset;
 @end
 
-@implementation CHRefreshControl
+@implementation CHCustomRefreshControl
 
 - (id)initWithFrame:(CGRect)frame
 {

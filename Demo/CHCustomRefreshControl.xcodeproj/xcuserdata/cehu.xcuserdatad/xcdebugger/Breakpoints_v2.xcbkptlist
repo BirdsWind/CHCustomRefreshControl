@@ -9,7 +9,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../CHCustomRefreshControl/CHRefreshControl.m"
+            filePath = "../CHCustomRefreshControl/CHCustomRefreshControl.m"
             timestampString = "423134906.785306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

@@ -19,7 +19,7 @@ typedef enum{
 
 @protocol CHRefreshControlDelegate;
 
-@interface CHRefreshControl : UIView
+@interface CHCustomRefreshControl : UIView
 
 @property(nonatomic,weak) id <CHRefreshControlDelegate> delegate;
 
@@ -32,12 +32,12 @@ typedef enum{
 
 @protocol CHRefreshControlDelegate <NSObject>
 
-- (void)chRefreshControlDelegateDidTriggerRefresh:(CHRefreshControl*)view;
-- (BOOL)chRefreshControlDelegateDataSourceIsLoading:(CHRefreshControl*)view;
+- (void)chRefreshControlDelegateDidTriggerRefresh:(CHCustomRefreshControl*)view;
+- (BOOL)chRefreshControlDelegateDataSourceIsLoading:(CHCustomRefreshControl*)view;
 
 //TODO: what is this
 @optional
-- (NSDate*)chRefreshControlDataSourceLastUpdated:(CHRefreshControl*)view;
+- (NSDate*)chRefreshControlDataSourceLastUpdated:(CHCustomRefreshControl*)view;
 
 @end
 
