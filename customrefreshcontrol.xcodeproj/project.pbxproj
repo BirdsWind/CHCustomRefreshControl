@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9473EAFE1936032E00D29495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EAFD1936032E00D29495 /* Foundation.framework */; };
+		9473EB001936032E00D29495 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EAFF1936032E00D29495 /* CoreGraphics.framework */; };
+		9473EB021936032E00D29495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EB011936032E00D29495 /* UIKit.framework */; };
+		9473EB081936032E00D29495 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9473EB061936032E00D29495 /* InfoPlist.strings */; };
+		9473EB0A1936032E00D29495 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9473EB091936032E00D29495 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9473EB0E1936032E00D29495 /* CHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9473EB0D1936032E00D29495 /* CHAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9473EB111936032E00D29495 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9473EB0F1936032E00D29495 /* Main.storyboard */; };
+		9473EB141936032E00D29495 /* CHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9473EB131936032E00D29495 /* CHViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9473EB161936032E00D29495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9473EB151936032E00D29495 /* Images.xcassets */; };
+		9473EB1D1936032E00D29495 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EB1C1936032E00D29495 /* XCTest.framework */; };
+		9473EB1E1936032E00D29495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EAFD1936032E00D29495 /* Foundation.framework */; };
+		9473EB1F1936032E00D29495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EB011936032E00D29495 /* UIKit.framework */; };
+		9473EB271936032E00D29495 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9473EB251936032E00D29495 /* InfoPlist.strings */; };
+		9473EB291936032E00D29495 /* customrefreshcontrolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9473EB281936032E00D29495 /* customrefreshcontrolTests.m */; };
+		9473EB361936043900D29495 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473EB351936043900D29495 /* QuartzCore.framework */; };
+		94C7F534193776FE00311251 /* CHRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C7F533193776FE00311251 /* CHRefreshControl.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9473EB201936032E00D29495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9473EAF21936032E00D29495 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9473EAF91936032E00D29495;
+			remoteInfo = customrefreshcontrol;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9473EAFA1936032E00D29495 /* customrefreshcontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = customrefreshcontrol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9473EAFD1936032E00D29495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9473EAFF1936032E00D29495 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9473EB011936032E00D29495 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9473EB051936032E00D29495 /* customrefreshcontrol-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "customrefreshcontrol-Info.plist"; sourceTree = "<group>"; };
+		9473EB071936032E00D29495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9473EB091936032E00D29495 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9473EB0B1936032E00D29495 /* customrefreshcontrol-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "customrefreshcontrol-Prefix.pch"; sourceTree = "<group>"; };
+		9473EB0C1936032E00D29495 /* CHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAppDelegate.h; sourceTree = "<group>"; };
+		9473EB0D1936032E00D29495 /* CHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAppDelegate.m; sourceTree = "<group>"; };
+		9473EB101936032E00D29495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9473EB121936032E00D29495 /* CHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHViewController.h; sourceTree = "<group>"; };
+		9473EB131936032E00D29495 /* CHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHViewController.m; sourceTree = "<group>"; };
+		9473EB151936032E00D29495 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9473EB1B1936032E00D29495 /* customrefreshcontrolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = customrefreshcontrolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9473EB1C1936032E00D29495 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9473EB241936032E00D29495 /* customrefreshcontrolTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "customrefreshcontrolTests-Info.plist"; sourceTree = "<group>"; };
+		9473EB261936032E00D29495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9473EB281936032E00D29495 /* customrefreshcontrolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customrefreshcontrolTests.m; sourceTree = "<group>"; };
+		9473EB351936043900D29495 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		94C7F532193776FE00311251 /* CHRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRefreshControl.h; sourceTree = "<group>"; };
+		94C7F533193776FE00311251 /* CHRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRefreshControl.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9473EAF71936032E00D29495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9473EB361936043900D29495 /* QuartzCore.framework in Frameworks */,
+				9473EB001936032E00D29495 /* CoreGraphics.framework in Frameworks */,
+				9473EB021936032E00D29495 /* UIKit.framework in Frameworks */,
+				9473EAFE1936032E00D29495 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9473EB181936032E00D29495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9473EB1D1936032E00D29495 /* XCTest.framework in Frameworks */,
+				9473EB1F1936032E00D29495 /* UIKit.framework in Frameworks */,
+				9473EB1E1936032E00D29495 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9473EAF11936032E00D29495 = {
+			isa = PBXGroup;
+			children = (
+				94C7F532193776FE00311251 /* CHRefreshControl.h */,
+				94C7F533193776FE00311251 /* CHRefreshControl.m */,
+				9473EB031936032E00D29495 /* customrefreshcontrol */,
+				9473EB221936032E00D29495 /* customrefreshcontrolTests */,
+				9473EAFC1936032E00D29495 /* Frameworks */,
+				9473EAFB1936032E00D29495 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9473EAFB1936032E00D29495 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9473EAFA1936032E00D29495 /* customrefreshcontrol.app */,
+				9473EB1B1936032E00D29495 /* customrefreshcontrolTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9473EAFC1936032E00D29495 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9473EB351936043900D29495 /* QuartzCore.framework */,
+				9473EAFD1936032E00D29495 /* Foundation.framework */,
+				9473EAFF1936032E00D29495 /* CoreGraphics.framework */,
+				9473EB011936032E00D29495 /* UIKit.framework */,
+				9473EB1C1936032E00D29495 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9473EB031936032E00D29495 /* customrefreshcontrol */ = {
+			isa = PBXGroup;
+			children = (
+				9473EB0C1936032E00D29495 /* CHAppDelegate.h */,
+				9473EB0D1936032E00D29495 /* CHAppDelegate.m */,
+				9473EB0F1936032E00D29495 /* Main.storyboard */,
+				9473EB121936032E00D29495 /* CHViewController.h */,
+				9473EB131936032E00D29495 /* CHViewController.m */,
+				9473EB151936032E00D29495 /* Images.xcassets */,
+				9473EB041936032E00D29495 /* Supporting Files */,
+			);
+			path = customrefreshcontrol;
+			sourceTree = "<group>";
+		};
+		9473EB041936032E00D29495 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9473EB051936032E00D29495 /* customrefreshcontrol-Info.plist */,
+				9473EB061936032E00D29495 /* InfoPlist.strings */,
+				9473EB091936032E00D29495 /* main.m */,
+				9473EB0B1936032E00D29495 /* customrefreshcontrol-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9473EB221936032E00D29495 /* customrefreshcontrolTests */ = {
+			isa = PBXGroup;
+			children = (
+				9473EB281936032E00D29495 /* customrefreshcontrolTests.m */,
+				9473EB231936032E00D29495 /* Supporting Files */,
+			);
+			path = customrefreshcontrolTests;
+			sourceTree = "<group>";
+		};
+		9473EB231936032E00D29495 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9473EB241936032E00D29495 /* customrefreshcontrolTests-Info.plist */,
+				9473EB251936032E00D29495 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9473EAF91936032E00D29495 /* customrefreshcontrol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9473EB2C1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrol" */;
+			buildPhases = (
+				9473EAF61936032E00D29495 /* Sources */,
+				9473EAF71936032E00D29495 /* Frameworks */,
+				9473EAF81936032E00D29495 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = customrefreshcontrol;
+			productName = customrefreshcontrol;
+			productReference = 9473EAFA1936032E00D29495 /* customrefreshcontrol.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9473EB1A1936032E00D29495 /* customrefreshcontrolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9473EB2F1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrolTests" */;
+			buildPhases = (
+				9473EB171936032E00D29495 /* Sources */,
+				9473EB181936032E00D29495 /* Frameworks */,
+				9473EB191936032E00D29495 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9473EB211936032E00D29495 /* PBXTargetDependency */,
+			);
+			name = customrefreshcontrolTests;
+			productName = customrefreshcontrolTests;
+			productReference = 9473EB1B1936032E00D29495 /* customrefreshcontrolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9473EAF21936032E00D29495 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CH;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Cecilia Humlelu";
+				TargetAttributes = {
+					9473EB1A1936032E00D29495 = {
+						TestTargetID = 9473EAF91936032E00D29495;
+					};
+				};
+			};
+			buildConfigurationList = 9473EAF51936032E00D29495 /* Build configuration list for PBXProject "customrefreshcontrol" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9473EAF11936032E00D29495;
+			productRefGroup = 9473EAFB1936032E00D29495 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9473EAF91936032E00D29495 /* customrefreshcontrol */,
+				9473EB1A1936032E00D29495 /* customrefreshcontrolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9473EAF81936032E00D29495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9473EB161936032E00D29495 /* Images.xcassets in Resources */,
+				9473EB081936032E00D29495 /* InfoPlist.strings in Resources */,
+				9473EB111936032E00D29495 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9473EB191936032E00D29495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9473EB271936032E00D29495 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9473EAF61936032E00D29495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9473EB0A1936032E00D29495 /* main.m in Sources */,
+				9473EB0E1936032E00D29495 /* CHAppDelegate.m in Sources */,
+				94C7F534193776FE00311251 /* CHRefreshControl.m in Sources */,
+				9473EB141936032E00D29495 /* CHViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9473EB171936032E00D29495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9473EB291936032E00D29495 /* customrefreshcontrolTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9473EB211936032E00D29495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9473EAF91936032E00D29495 /* customrefreshcontrol */;
+			targetProxy = 9473EB201936032E00D29495 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9473EB061936032E00D29495 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9473EB071936032E00D29495 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9473EB0F1936032E00D29495 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9473EB101936032E00D29495 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9473EB251936032E00D29495 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9473EB261936032E00D29495 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9473EB2A1936032E00D29495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9473EB2B1936032E00D29495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9473EB2D1936032E00D29495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cecilia Humlelu (KQ5U933H5C)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "customrefreshcontrol/customrefreshcontrol-Prefix.pch";
+				INFOPLIST_FILE = "customrefreshcontrol/customrefreshcontrol-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FF9CC240-BF00-4E7D-9420-09980FB15298";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9473EB2E1936032E00D29495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "customrefreshcontrol/customrefreshcontrol-Prefix.pch";
+				INFOPLIST_FILE = "customrefreshcontrol/customrefreshcontrol-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9473EB301936032E00D29495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/customrefreshcontrol.app/customrefreshcontrol";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "customrefreshcontrol/customrefreshcontrol-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "customrefreshcontrolTests/customrefreshcontrolTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9473EB311936032E00D29495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/customrefreshcontrol.app/customrefreshcontrol";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "customrefreshcontrol/customrefreshcontrol-Prefix.pch";
+				INFOPLIST_FILE = "customrefreshcontrolTests/customrefreshcontrolTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9473EAF51936032E00D29495 /* Build configuration list for PBXProject "customrefreshcontrol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9473EB2A1936032E00D29495 /* Debug */,
+				9473EB2B1936032E00D29495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9473EB2C1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9473EB2D1936032E00D29495 /* Debug */,
+				9473EB2E1936032E00D29495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9473EB2F1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9473EB301936032E00D29495 /* Debug */,
+				9473EB311936032E00D29495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9473EAF21936032E00D29495 /* Project object */;
+}
