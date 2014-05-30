@@ -7,6 +7,14 @@ made one looks like pinterest refresh control
 
 Custom refresh control look like pinterest one. Use CALayer and CABasicAnimation
 
+
+#Installation
+
+```
+pod "CHCustomRefreshControl", :git =>"https://github.com/TokyoBirdy/customRefreshControl.git",:branch => "master/0.0.3"
+```
+
+
 #Contact 
 
 Email cecilia.humlelu@gmail.com
