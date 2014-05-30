@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:customrefreshcontrol.xcodeproj">
+      location = "self:CHCustomRefreshControl.xcodeproj">
    </FileRef>
 </Workspace>

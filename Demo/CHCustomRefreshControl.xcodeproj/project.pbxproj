@@ -36,23 +36,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9473EAFA1936032E00D29495 /* customrefreshcontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = customrefreshcontrol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9473EAFA1936032E00D29495 /* CHCustomRefreshControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHCustomRefreshControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9473EAFD1936032E00D29495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9473EAFF1936032E00D29495 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9473EB011936032E00D29495 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9473EB051936032E00D29495 /* customrefreshcontrol-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "customrefreshcontrol-Info.plist"; sourceTree = "<group>"; };
+		9473EB051936032E00D29495 /* CHCustomRefreshControl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CHCustomRefreshControl-Info.plist"; sourceTree = "<group>"; };
 		9473EB071936032E00D29495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9473EB091936032E00D29495 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9473EB0B1936032E00D29495 /* customrefreshcontrol-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "customrefreshcontrol-Prefix.pch"; sourceTree = "<group>"; };
+		9473EB0B1936032E00D29495 /* CHCustomRefreshControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CHCustomRefreshControl-Prefix.pch"; sourceTree = "<group>"; };
 		9473EB0C1936032E00D29495 /* CHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAppDelegate.h; sourceTree = "<group>"; };
 		9473EB0D1936032E00D29495 /* CHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAppDelegate.m; sourceTree = "<group>"; };
 		9473EB101936032E00D29495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9473EB121936032E00D29495 /* CHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHViewController.h; sourceTree = "<group>"; };
 		9473EB131936032E00D29495 /* CHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHViewController.m; sourceTree = "<group>"; };
 		9473EB151936032E00D29495 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9473EB1B1936032E00D29495 /* customrefreshcontrolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = customrefreshcontrolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9473EB1B1936032E00D29495 /* CHCustomRefreshControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHCustomRefreshControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9473EB1C1936032E00D29495 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9473EB241936032E00D29495 /* customrefreshcontrolTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "customrefreshcontrolTests-Info.plist"; sourceTree = "<group>"; };
+		9473EB241936032E00D29495 /* CHCustomRefreshControlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CHCustomRefreshControlTests-Info.plist"; sourceTree = "<group>"; };
 		9473EB261936032E00D29495 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9473EB281936032E00D29495 /* customrefreshcontrolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customrefreshcontrolTests.m; sourceTree = "<group>"; };
 		9473EB351936043900D29495 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -98,8 +98,8 @@
 		9473EAFB1936032E00D29495 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9473EAFA1936032E00D29495 /* customrefreshcontrol.app */,
-				9473EB1B1936032E00D29495 /* customrefreshcontrolTests.xctest */,
+				9473EAFA1936032E00D29495 /* CHCustomRefreshControl.app */,
+				9473EB1B1936032E00D29495 /* CHCustomRefreshControlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,10 +134,10 @@
 		9473EB041936032E00D29495 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9473EB051936032E00D29495 /* customrefreshcontrol-Info.plist */,
+				9473EB051936032E00D29495 /* CHCustomRefreshControl-Info.plist */,
 				9473EB061936032E00D29495 /* InfoPlist.strings */,
 				9473EB091936032E00D29495 /* main.m */,
-				9473EB0B1936032E00D29495 /* customrefreshcontrol-Prefix.pch */,
+				9473EB0B1936032E00D29495 /* CHCustomRefreshControl-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,7 +154,7 @@
 		9473EB231936032E00D29495 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9473EB241936032E00D29495 /* customrefreshcontrolTests-Info.plist */,
+				9473EB241936032E00D29495 /* CHCustomRefreshControlTests-Info.plist */,
 				9473EB251936032E00D29495 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9473EAF91936032E00D29495 /* customrefreshcontrol */ = {
+		9473EAF91936032E00D29495 /* CHCustomRefreshControl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9473EB2C1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrol" */;
+			buildConfigurationList = 9473EB2C1936032E00D29495 /* Build configuration list for PBXNativeTarget "CHCustomRefreshControl" */;
 			buildPhases = (
 				9473EAF61936032E00D29495 /* Sources */,
 				9473EAF71936032E00D29495 /* Frameworks */,
@@ -185,14 +185,14 @@
 			);
 			dependencies = (
 			);
-			name = customrefreshcontrol;
+			name = CHCustomRefreshControl;
 			productName = customrefreshcontrol;
-			productReference = 9473EAFA1936032E00D29495 /* customrefreshcontrol.app */;
+			productReference = 9473EAFA1936032E00D29495 /* CHCustomRefreshControl.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9473EB1A1936032E00D29495 /* customrefreshcontrolTests */ = {
+		9473EB1A1936032E00D29495 /* CHCustomRefreshControlTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9473EB2F1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrolTests" */;
+			buildConfigurationList = 9473EB2F1936032E00D29495 /* Build configuration list for PBXNativeTarget "CHCustomRefreshControlTests" */;
 			buildPhases = (
 				9473EB171936032E00D29495 /* Sources */,
 				9473EB181936032E00D29495 /* Frameworks */,
@@ -203,9 +203,9 @@
 			dependencies = (
 				9473EB211936032E00D29495 /* PBXTargetDependency */,
 			);
-			name = customrefreshcontrolTests;
+			name = CHCustomRefreshControlTests;
 			productName = customrefreshcontrolTests;
-			productReference = 9473EB1B1936032E00D29495 /* customrefreshcontrolTests.xctest */;
+			productReference = 9473EB1B1936032E00D29495 /* CHCustomRefreshControlTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -223,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9473EAF51936032E00D29495 /* Build configuration list for PBXProject "customrefreshcontrol" */;
+			buildConfigurationList = 9473EAF51936032E00D29495 /* Build configuration list for PBXProject "CHCustomRefreshControl" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,8 +236,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9473EAF91936032E00D29495 /* customrefreshcontrol */,
-				9473EB1A1936032E00D29495 /* customrefreshcontrolTests */,
+				9473EAF91936032E00D29495 /* CHCustomRefreshControl */,
+				9473EB1A1936032E00D29495 /* CHCustomRefreshControlTests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +288,7 @@
 /* Begin PBXTargetDependency section */
 		9473EB211936032E00D29495 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9473EAF91936032E00D29495 /* customrefreshcontrol */;
+			target = 9473EAF91936032E00D29495 /* CHCustomRefreshControl */;
 			targetProxy = 9473EB201936032E00D29495 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -398,9 +398,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Cecilia Humlelu (KQ5U933H5C)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "customrefreshcontrol/customrefreshcontrol-Prefix.pch";
-				INFOPLIST_FILE = "customrefreshcontrol/customrefreshcontrol-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "customrefreshcontrol/CHCustomRefreshControl-Prefix.pch";
+				INFOPLIST_FILE = "customrefreshcontrol/CHCustomRefreshControl-Info.plist";
+				PRODUCT_NAME = CHCustomRefreshControl;
 				PROVISIONING_PROFILE = "FF9CC240-BF00-4E7D-9420-09980FB15298";
 				WRAPPER_EXTENSION = app;
 			};
@@ -412,9 +412,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "customrefreshcontrol/customrefreshcontrol-Prefix.pch";
-				INFOPLIST_FILE = "customrefreshcontrol/customrefreshcontrol-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "customrefreshcontrol/CHCustomRefreshControl-Prefix.pch";
+				INFOPLIST_FILE = "customrefreshcontrol/CHCustomRefreshControl-Info.plist";
+				PRODUCT_NAME = CHCustomRefreshControl;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -434,8 +434,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "customrefreshcontrolTests/customrefreshcontrolTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "customrefreshcontrolTests/CHCustomRefreshControlTests-Info.plist";
+				PRODUCT_NAME = CHCustomRefreshControlTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -452,8 +452,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "customrefreshcontrol/customrefreshcontrol-Prefix.pch";
-				INFOPLIST_FILE = "customrefreshcontrolTests/customrefreshcontrolTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "customrefreshcontrolTests/CHCustomRefreshControlTests-Info.plist";
+				PRODUCT_NAME = CHCustomRefreshControlTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -462,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9473EAF51936032E00D29495 /* Build configuration list for PBXProject "customrefreshcontrol" */ = {
+		9473EAF51936032E00D29495 /* Build configuration list for PBXProject "CHCustomRefreshControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9473EB2A1936032E00D29495 /* Debug */,
@@ -471,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9473EB2C1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrol" */ = {
+		9473EB2C1936032E00D29495 /* Build configuration list for PBXNativeTarget "CHCustomRefreshControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9473EB2D1936032E00D29495 /* Debug */,
@@ -480,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9473EB2F1936032E00D29495 /* Build configuration list for PBXNativeTarget "customrefreshcontrolTests" */ = {
+		9473EB2F1936032E00D29495 /* Build configuration list for PBXNativeTarget "CHCustomRefreshControlTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9473EB301936032E00D29495 /* Debug */,

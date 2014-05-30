@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9473EAF91936032E00D29495"
-               BuildableName = "customrefreshcontrol.app"
-               BlueprintName = "customrefreshcontrol"
-               ReferencedContainer = "container:customrefreshcontrol.xcodeproj">
+               BuildableName = "CHCustomRefreshControl.app"
+               BlueprintName = "CHCustomRefreshControl"
+               ReferencedContainer = "container:CHCustomRefreshControl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9473EB1A1936032E00D29495"
-               BuildableName = "customrefreshcontrolTests.xctest"
-               BlueprintName = "customrefreshcontrolTests"
-               ReferencedContainer = "container:customrefreshcontrol.xcodeproj">
+               BuildableName = "CHCustomRefreshControlTests.xctest"
+               BlueprintName = "CHCustomRefreshControlTests"
+               ReferencedContainer = "container:CHCustomRefreshControl.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9473EAF91936032E00D29495"
-            BuildableName = "customrefreshcontrol.app"
-            BlueprintName = "customrefreshcontrol"
-            ReferencedContainer = "container:customrefreshcontrol.xcodeproj">
+            BuildableName = "CHCustomRefreshControl.app"
+            BlueprintName = "CHCustomRefreshControl"
+            ReferencedContainer = "container:CHCustomRefreshControl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9473EAF91936032E00D29495"
-            BuildableName = "customrefreshcontrol.app"
-            BlueprintName = "customrefreshcontrol"
-            ReferencedContainer = "container:customrefreshcontrol.xcodeproj">
+            BuildableName = "CHCustomRefreshControl.app"
+            BlueprintName = "CHCustomRefreshControl"
+            ReferencedContainer = "container:CHCustomRefreshControl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9473EAF91936032E00D29495"
-            BuildableName = "customrefreshcontrol.app"
-            BlueprintName = "customrefreshcontrol"
-            ReferencedContainer = "container:customrefreshcontrol.xcodeproj">
+            BuildableName = "CHCustomRefreshControl.app"
+            BlueprintName = "CHCustomRefreshControl"
+            ReferencedContainer = "container:CHCustomRefreshControl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
