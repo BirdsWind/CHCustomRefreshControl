@@ -14,6 +14,9 @@
 #define IMAGERADIUS 12
 CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 
+CGFloat const MinCONTENTOFFSETY = 20.0;
+CGFloat const MaxCONTENTOFFSETY = 100.0;
+
 @interface CHCustomRefreshControl()
 
 @property CALayer *layerGroup;
@@ -110,7 +113,7 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 			_loading = [_delegate chRefreshControlDelegateDataSourceIsLoading:self];
 		}
 		
-		if(!_loading && aScrollView.contentOffset.y < 0){
+		if(!_loading && aScrollView.contentOffset.y < - MinCONTENTOFFSETY){
              [self setState:CHPullRefreshDragging withScrollView:aScrollView withLastContentOffset:lastContentOffset];
         }
         else{
@@ -217,10 +220,12 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 #define degToRad(angle) angle*M_PI/180.0
 
 -(void)updateProgressWithScroll:(UIScrollView *)scrollView withLastContentOffset:(CGFloat)lastContentOffset{
-    if(lastContentOffset>=-chCONTENTOFFSETLIMIT && lastContentOffset< 0.0 ){
+    
+    
+    if(lastContentOffset >= -MaxCONTENTOFFSETY && lastContentOffset <-MinCONTENTOFFSETY ){
         
-        CGFloat lastDegress = degToRad(lastContentOffset/chCONTENTOFFSETLIMIT*180.0);
-        CGFloat currentDegress = degToRad(scrollView.contentOffset.y/chCONTENTOFFSETLIMIT*180.0);
+        CGFloat lastDegress = degToRad((lastContentOffset+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)*180.0);
+        CGFloat currentDegress = degToRad((scrollView.contentOffset.y + MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)*180.0);
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
         
@@ -234,8 +239,8 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
         
         
         CABasicAnimation *drawAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        drawAnimation.fromValue = [NSNumber numberWithFloat:fabsf(lastContentOffset)/chCONTENTOFFSETLIMIT];
-        drawAnimation.toValue   = [NSNumber numberWithFloat:fabsf(scrollView.contentOffset.y)/chCONTENTOFFSETLIMIT];
+        drawAnimation.fromValue = [NSNumber numberWithFloat:fabsf(lastContentOffset+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)];
+        drawAnimation.toValue   = [NSNumber numberWithFloat:fabsf(scrollView.contentOffset.y+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)];
         [drawAnimation setRemovedOnCompletion:NO];
         [drawAnimation setFillMode:kCAFillModeForwards];
         
@@ -258,17 +263,13 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 
         [self.layerGroup addAnimation:moveAnimation forKey:@"flow"];
         
-        
-    }
-    
-        
-        if(lastContentOffset>=-chCONTENTOFFSETLIMIT && lastContentOffset< 0.0 ){
+
             CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
            // opacityAnimation.repeatCount         = 1.0;  // Animate only once..
         
             // Animate from no part of the stroke being drawn to the entire stroke being drawn
-            opacityAnimation.fromValue = [NSNumber numberWithFloat:fabsf(lastContentOffset)/chCONTENTOFFSETLIMIT];
-            opacityAnimation.toValue   = [NSNumber numberWithFloat:fabsf(scrollView.contentOffset.y)/chCONTENTOFFSETLIMIT];
+            opacityAnimation.fromValue = [NSNumber numberWithFloat:fabsf(lastContentOffset)/MaxCONTENTOFFSETY];
+            opacityAnimation.toValue   = [NSNumber numberWithFloat:fabsf(scrollView.contentOffset.y)/MaxCONTENTOFFSETY];
             [opacityAnimation setRemovedOnCompletion:NO];
             [opacityAnimation setFillMode:kCAFillModeForwards];
         
