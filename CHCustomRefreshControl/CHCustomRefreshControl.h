@@ -10,6 +10,7 @@
 
 typedef enum{
     CHPullRefreshDragging = 0,
+    CHPullRefreshNone,
 	CHPullRefreshLoading,
 } CHPullRefreshState;
 

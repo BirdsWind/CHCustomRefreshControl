@@ -81,7 +81,7 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 		self.activityView.frame = CGRectMake((frame.size.width - 20.0)/2, frame.size.height - 40.0f, 20.0f, 20.0f);
 		[self addSubview:self.activityView];
 		
-		[self setState: CHPullRefreshDragging withScrollView:nil withLastContentOffset:0];
+		[self setState: CHPullRefreshNone withScrollView:nil withLastContentOffset:0];
         
         
 
@@ -110,11 +110,14 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 			_loading = [_delegate chRefreshControlDelegateDataSourceIsLoading:self];
 		}
 		
-		if (!_loading ) {
-            [self setState:CHPullRefreshDragging withScrollView:aScrollView withLastContentOffset:lastContentOffset];
-            //  NSLog(@"state pulling : scrollviewcontent offset y  %f",scrollView.contentOffset.y);
-            //  NSLog(@"state pulling : isloading value %i",_loading);
-		}
+		if(!_loading && aScrollView.contentOffset.y < 0){
+             [self setState:CHPullRefreshDragging withScrollView:aScrollView withLastContentOffset:lastContentOffset];
+        }
+        else{
+            
+            //or do nothing
+            //[self setState:CHPullRefreshNone withScrollView:nil withLastContentOffset:0];
+        }
 		
 		if (aScrollView.contentInset.top != 0) {
 			aScrollView.contentInset = UIEdgeInsetsZero;
@@ -153,7 +156,7 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
 	[UIView commitAnimations];
 	
-	[self setState:CHPullRefreshDragging withScrollView:scrollView withLastContentOffset:scrollView.contentOffset.y];
+	[self setState:CHPullRefreshNone withScrollView:scrollView withLastContentOffset:scrollView.contentOffset.y];
 }
 
 
@@ -184,6 +187,10 @@ CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 - (void)setState:(CHPullRefreshState)aState withScrollView:(UIScrollView *)ascrollView withLastContentOffset:(CGFloat)lastContentOffset;{
     
     switch (aState) {
+        case CHPullRefreshNone:
+            self.layerGroup.hidden = NO;
+            self.activityView.hidden = YES;
+			break;
 		case CHPullRefreshDragging:
             self.layerGroup.hidden = NO;
             self.activityView.hidden = YES;
