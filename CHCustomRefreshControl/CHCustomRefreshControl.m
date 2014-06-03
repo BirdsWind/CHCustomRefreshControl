@@ -264,7 +264,7 @@ CGFloat const MaxCONTENTOFFSETY = 90.0;
        // self.drawStrokeAnimation.duration = fabs(toStrokeValue - fromStrokeValue);;
         [self.imageCirle addAnimation: self.drawStrokeAnimation forKey:@"strokeEnd"];
    
-        NSLog(@"self.drawStrokeAnimation.fromValue %@",self.drawStrokeAnimation.fromValue);
+      //  NSLog(@"self.drawStrokeAnimation.fromValue %@",self.drawStrokeAnimation.fromValue);
         
         
         
@@ -286,24 +286,24 @@ CGFloat const MaxCONTENTOFFSETY = 90.0;
         
         
 
-        NSLog(@"last content offset %f and current offset %f",lastContentOffset, scrollView.contentOffset.y);
+     //   NSLog(@"last content offset %f and current offset %f",lastContentOffset, scrollView.contentOffset.y);
         CGPoint position = self.layerGroup.position;
     
-        NSLog(@"position %@",NSStringFromCGPoint(position));
+      //  NSLog(@"position %@",NSStringFromCGPoint(position));
     
         
         CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
         
-        NSLog(@"position %@",NSStringFromCGPoint(position));
+      
         CGPoint fromPoint = CGPointMake(position.x, position.y + aMin*15);
         NSValue *prevVal = [NSValue valueWithCGPoint:fromPoint];
-        NSLog(@"fromPoint %@",NSStringFromCGPoint(fromPoint));
+     //   NSLog(@"fromPoint %@",NSStringFromCGPoint(fromPoint));
         [moveAnimation setFromValue:prevVal];
         CGPoint toPoint = CGPointMake(position.x , position.y + aMax*15);
         [moveAnimation setToValue:[NSValue valueWithCGPoint:toPoint]];
         
         
-        NSLog(@"toPoint %@",NSStringFromCGPoint(toPoint));
+      //  NSLog(@"toPoint %@",NSStringFromCGPoint(toPoint));
         moveAnimation.removedOnCompletion = NO;
         moveAnimation.fillMode = kCAFillModeForwards;
         
