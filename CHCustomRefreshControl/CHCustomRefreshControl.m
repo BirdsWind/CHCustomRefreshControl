@@ -256,8 +256,8 @@ CGFloat const MaxCONTENTOFFSETY = 90.0;
         
         if(self.imageCirle.strokeEnd == 1)
            self.imageCirle.strokeEnd = 0;
-        CGFloat fromStrokeValue = [self.imageCirle.presentationLayer strokeEnd];
-        CGFloat toStrokeValue = fabsf(sin(0.5 * M_PI * aMax));
+        CGFloat fromStrokeValue = fabsf([self.imageCirle.presentationLayer strokeEnd]);
+        CGFloat toStrokeValue = fabsf(aMax);
         
          self.drawStrokeAnimation.fromValue = [NSNumber numberWithFloat:fromStrokeValue]; //[NSNumber numberWithFloat:fabsf(sin(0.5 * M_PI * aMin))];
          self.drawStrokeAnimation.toValue   = [NSNumber numberWithFloat:toStrokeValue];
