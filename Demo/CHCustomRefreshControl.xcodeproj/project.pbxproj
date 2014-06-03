@@ -396,12 +396,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Cecilia Humlelu (KQ5U933H5C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "customrefreshcontrol/CHCustomRefreshControl-Prefix.pch";
 				INFOPLIST_FILE = "customrefreshcontrol/CHCustomRefreshControl-Info.plist";
 				PRODUCT_NAME = CHCustomRefreshControl;
-				PROVISIONING_PROFILE = "FF9CC240-BF00-4E7D-9420-09980FB15298";
+				PROVISIONING_PROFILE = "C8537DF0-DB96-4195-906C-5F02D9123181";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,6 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "customrefreshcontrol/CHCustomRefreshControl-Prefix.pch";
 				INFOPLIST_FILE = "customrefreshcontrol/CHCustomRefreshControl-Info.plist";

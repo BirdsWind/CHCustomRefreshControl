@@ -116,10 +116,8 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
 		if(!_loading && aScrollView.contentOffset.y < - MinCONTENTOFFSETY){
              [self setState:CHPullRefreshDragging withScrollView:aScrollView withLastContentOffset:lastContentOffset];
         }
-        else{
-            
-            //or do nothing
-            //[self setState:CHPullRefreshNone withScrollView:nil withLastContentOffset:0];
+        else if(!_loading && aScrollView.contentOffset.y > - MinCONTENTOFFSETY){
+             [self setState:CHPullRefreshNone withScrollView:nil withLastContentOffset:0];
         }
 		
 		if (aScrollView.contentInset.top != 0) {
@@ -191,8 +189,9 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
     
     switch (aState) {
         case CHPullRefreshNone:
-            self.layerGroup.hidden = NO;
+            self.layerGroup.hidden = YES;
             self.activityView.hidden = YES;
+//            [self updateProgressWithScroll:ascrollView withLastContentOffset:lastContentOffset];
 			break;
 		case CHPullRefreshDragging:
             self.layerGroup.hidden = NO;
@@ -224,8 +223,10 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
     
     if(lastContentOffset >= -MaxCONTENTOFFSETY && lastContentOffset <-MinCONTENTOFFSETY ){
         
-        CGFloat lastDegress = degToRad((lastContentOffset+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)*180.0);
-        CGFloat currentDegress = degToRad((scrollView.contentOffset.y + MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)*180.0);
+        CGFloat aMin = (lastContentOffset+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY);
+        CGFloat aMax = (scrollView.contentOffset.y + MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY);
+        CGFloat lastDegress = degToRad(aMin*180.0);
+        CGFloat currentDegress = degToRad(aMax*180.0);
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
         
@@ -239,8 +240,8 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
         
         
         CABasicAnimation *drawAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        drawAnimation.fromValue = [NSNumber numberWithFloat:fabsf(lastContentOffset+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)];
-        drawAnimation.toValue   = [NSNumber numberWithFloat:fabsf(scrollView.contentOffset.y+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY)];
+        drawAnimation.fromValue = [NSNumber numberWithFloat:fabsf(aMin)];
+        drawAnimation.toValue   = [NSNumber numberWithFloat:fabsf(aMax)];
         [drawAnimation setRemovedOnCompletion:NO];
         [drawAnimation setFillMode:kCAFillModeForwards];
         
@@ -252,35 +253,53 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
         
         
         
-        CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+
+        CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+       // opacityAnimation.repeatCount         = 1.0;  // Animate only once..
+    
+        // Animate from no part of the stroke being drawn to the entire stroke being drawn
+        opacityAnimation.fromValue = [NSNumber numberWithFloat:fabsf(aMin)];
+        opacityAnimation.toValue   = [NSNumber numberWithFloat:fabsf(aMax)];
+        [opacityAnimation setRemovedOnCompletion:NO];
+        [opacityAnimation setFillMode:kCAFillModeForwards];
+    
+        // Experiment with timing to get the appearence to look the way you want
+        opacityAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    
+        // Add the animation to the circle
+        [self.layerGroup addAnimation:opacityAnimation forKey:@"drawOpacity"];
+        
+        
+
+        NSLog(@"last content offset %f and current offset %f",lastContentOffset, scrollView.contentOffset.y);
         CGPoint position = self.layerGroup.position;
-        NSValue *prevVal = [NSValue valueWithCGPoint:CGPointMake(position.x, position.y + lastContentOffset/chCONTENTOFFSETLIMIT *15)];
+    
+        NSLog(@"position %@",NSStringFromCGPoint(position));
+    
+        
+        CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+        
+        NSLog(@"position %@",NSStringFromCGPoint(position));
+        CGPoint fromPoint = CGPointMake(position.x, position.y + aMin*15);
+        NSValue *prevVal = [NSValue valueWithCGPoint:fromPoint];
+        NSLog(@"fromPoint %@",NSStringFromCGPoint(fromPoint));
         [moveAnimation setFromValue:prevVal];
-        CGPoint toPoint = CGPointMake(position.x , position.y + scrollView.contentOffset.y/chCONTENTOFFSETLIMIT *15);
+        CGPoint toPoint = CGPointMake(position.x , position.y + aMax*15);
         [moveAnimation setToValue:[NSValue valueWithCGPoint:toPoint]];
+        
+        
+        NSLog(@"toPoint %@",NSStringFromCGPoint(toPoint));
         moveAnimation.removedOnCompletion = NO;
         moveAnimation.fillMode = kCAFillModeForwards;
-
+        
         [self.layerGroup addAnimation:moveAnimation forKey:@"flow"];
-        
 
-            CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-           // opacityAnimation.repeatCount         = 1.0;  // Animate only once..
         
-            // Animate from no part of the stroke being drawn to the entire stroke being drawn
-            opacityAnimation.fromValue = [NSNumber numberWithFloat:fabsf(lastContentOffset)/MaxCONTENTOFFSETY];
-            opacityAnimation.toValue   = [NSNumber numberWithFloat:fabsf(scrollView.contentOffset.y)/MaxCONTENTOFFSETY];
-            [opacityAnimation setRemovedOnCompletion:NO];
-            [opacityAnimation setFillMode:kCAFillModeForwards];
-        
-            // Experiment with timing to get the appearence to look the way you want
-            opacityAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        
-            // Add the animation to the circle
-            [self.layerGroup addAnimation:opacityAnimation forKey:@"drawOpacity"];
-            
-        }
-        
+    }
+    
+
+    
+    
   
     
     
