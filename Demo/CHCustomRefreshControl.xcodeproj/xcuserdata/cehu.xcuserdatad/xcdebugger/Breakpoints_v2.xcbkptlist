@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CHCustomRefreshControl/CHCustomRefreshControl.m"
-            timestampString = "423421768.693242"
+            timestampString = "423478367.241038"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "-updateProgressWithScroll:withLastContentOffset:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CHCustomRefreshControl/CHCustomRefreshControl.m"
-            timestampString = "423421006.665157"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "-setState:withScrollView:withLastContentOffset:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

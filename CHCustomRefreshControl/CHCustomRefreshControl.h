@@ -20,7 +20,7 @@ typedef enum{
 
 @protocol CHRefreshControlDelegate;
 
-@interface CHCustomRefreshControl : UIView
+@interface CHCustomRefreshControl : UIControl
 
 @property(nonatomic,weak) id <CHRefreshControlDelegate> delegate;
 

@@ -14,8 +14,8 @@
 #define IMAGERADIUS 12
 CGFloat const chCONTENTOFFSETLIMIT = 65.0;
 
-CGFloat const MinCONTENTOFFSETY = 20.0;
-CGFloat const MaxCONTENTOFFSETY = 100.0;
+CGFloat const MinCONTENTOFFSETY = 0.0;
+CGFloat const MaxCONTENTOFFSETY = 90.0;
 
 @interface CHCustomRefreshControl()
 
@@ -25,11 +25,17 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
 @property CAShapeLayer *imageBackgroundCirle;
 @property UIActivityIndicatorView *activityView;
 @property CHPullRefreshState state;
+@property CABasicAnimation *drawAnimation;
+@property CABasicAnimation *animation;
+
+
 
 - (void)setState:(CHPullRefreshState)aState withScrollView:(UIScrollView *)ascrollView withLastContentOffset:(CGFloat)lastContentOffset;
 @end
 
 @implementation CHCustomRefreshControl
+
+@synthesize state = _state;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -47,7 +53,7 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
         
         
         
-        self.imageBackgroundCirle = [self createCircleWithfillColor:[UIColor whiteColor                                                          ] strokeColor:[UIColor lightGrayColor]];
+        self.imageBackgroundCirle = [self createCircleWithfillColor:[UIColor whiteColor                                                          ] strokeColor:[UIColor colorWithRed:221.0/255.0 green:221.0/255.0  blue:221.0/255.0  alpha:1]];
         
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 		if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
@@ -87,6 +93,15 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
 		[self setState: CHPullRefreshNone withScrollView:nil withLastContentOffset:0];
         
         
+         self.drawAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        [ self.drawAnimation setRemovedOnCompletion:NO];
+        [ self.drawAnimation setFillMode:kCAFillModeForwards];
+        
+        
+       self.animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        
+        self.animation.removedOnCompletion = NO;
+        self.animation.fillMode = kCAFillModeForwards;
 
     }
     return self;
@@ -113,11 +128,12 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
 			_loading = [_delegate chRefreshControlDelegateDataSourceIsLoading:self];
 		}
 		
-		if(!_loading && aScrollView.contentOffset.y < - MinCONTENTOFFSETY){
-             [self setState:CHPullRefreshDragging withScrollView:aScrollView withLastContentOffset:lastContentOffset];
-        }
-        else if(!_loading && aScrollView.contentOffset.y > - MinCONTENTOFFSETY){
-             [self setState:CHPullRefreshNone withScrollView:nil withLastContentOffset:0];
+		if(!_loading){
+            if(aScrollView.contentOffset.y < 0)
+                 [self setState:CHPullRefreshDragging withScrollView:aScrollView withLastContentOffset:lastContentOffset];
+            else
+                 [self setState:CHPullRefreshNone withScrollView:nil withLastContentOffset:0];
+                
         }
 		
 		if (aScrollView.contentInset.top != 0) {
@@ -134,8 +150,8 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
 	}
 	
     
-    //TODO: what is this 65?
-	if (scrollView.contentOffset.y <= - chCONTENTOFFSETLIMIT && !_loading) {
+    //TODO: what is this 65?  test use
+	if (scrollView.contentOffset.y <= - 2*chCONTENTOFFSETLIMIT && !_loading) {
 		
 		if ([_delegate respondsToSelector:@selector(chRefreshControlDelegateDidTriggerRefresh:)]) {
 			[_delegate chRefreshControlDelegateDidTriggerRefresh:self];
@@ -196,7 +212,7 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
 		case CHPullRefreshDragging:
             self.layerGroup.hidden = NO;
             self.activityView.hidden = YES;
-            [self updateProgressWithScroll:ascrollView withLastContentOffset:lastContentOffset];
+           [self updateProgressWithScroll:ascrollView withLastContentOffset:lastContentOffset];
 			break;
 		case CHPullRefreshLoading:
             self.activityView.hidden = NO;
@@ -225,74 +241,73 @@ CGFloat const MaxCONTENTOFFSETY = 100.0;
         
         CGFloat aMin = (lastContentOffset+MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY);
         CGFloat aMax = (scrollView.contentOffset.y + MinCONTENTOFFSETY)/fabsf(MaxCONTENTOFFSETY - MinCONTENTOFFSETY);
-        CGFloat lastDegress = degToRad(aMin*180.0);
-        CGFloat currentDegress = degToRad(aMax*180.0);
-        
-        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-        
-        animation.removedOnCompletion = NO;
-        animation.fillMode = kCAFillModeForwards;
-        animation.fromValue = [NSNumber numberWithFloat:lastDegress];
-        animation.toValue = [NSNumber numberWithFloat:currentDegress];
+        CGFloat lastDegress = degToRad(sin(0.5 * M_PI * aMin)*180.0);
+        CGFloat currentDegress = degToRad(sin(0.5 * M_PI * aMax)*180.0);
+
+        self.animation.fromValue = [NSNumber numberWithFloat:lastDegress];
+        self.animation.toValue = [NSNumber numberWithFloat:currentDegress];
         
         //  NSLog(@"from value %f to value %f", lastDegress,currentDegress);
-        [self.imageLogo addAnimation:animation forKey:@"rotation"];
+        [self.imageLogo addAnimation:self.animation forKey:@"rotation"];
         
+       // NSLog(@" from value %@"self.drawAnimation.fromValue
+         self.drawAnimation.fromValue =  [NSNumber numberWithFloat:fabsf(sin(0.5 * M_PI * aMin))];
+         self.drawAnimation.toValue   = [NSNumber numberWithFloat:fabsf(sin(0.5 * M_PI * aMax))];
+       
         
-        CABasicAnimation *drawAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        drawAnimation.fromValue = [NSNumber numberWithFloat:fabsf(aMin)];
-        drawAnimation.toValue   = [NSNumber numberWithFloat:fabsf(aMax)];
-        [drawAnimation setRemovedOnCompletion:NO];
-        [drawAnimation setFillMode:kCAFillModeForwards];
-        
+        NSLog(@"from value stroke end %@",self.drawAnimation.fromValue);
+        // [(NSNumber *)[currentLayer valueForKeyPath:@"transform.rotation.z"] floatValue];
        // NSLog(@" draw animation from value %@ to value %@", drawAnimation.fromValue, drawAnimation.toValue);
         
         // Experiment with timing to get the appearence to look the way you want
-        drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        [self.imageCirle addAnimation:drawAnimation forKey:@"circle rotation"];
-        
-        
-        
+       // drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
 
-        CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-       // opacityAnimation.repeatCount         = 1.0;  // Animate only once..
-    
-        // Animate from no part of the stroke being drawn to the entire stroke being drawn
-        opacityAnimation.fromValue = [NSNumber numberWithFloat:fabsf(aMin)];
-        opacityAnimation.toValue   = [NSNumber numberWithFloat:fabsf(aMax)];
-        [opacityAnimation setRemovedOnCompletion:NO];
-        [opacityAnimation setFillMode:kCAFillModeForwards];
-    
-        // Experiment with timing to get the appearence to look the way you want
-        opacityAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-    
-        // Add the animation to the circle
-        [self.layerGroup addAnimation:opacityAnimation forKey:@"drawOpacity"];
-        
-        
+            [self.imageCirle addAnimation: self.drawAnimation forKey:@"circle rotation"];
 
-        NSLog(@"last content offset %f and current offset %f",lastContentOffset, scrollView.contentOffset.y);
-        CGPoint position = self.layerGroup.position;
-    
-        NSLog(@"position %@",NSStringFromCGPoint(position));
-    
-        
-        CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
-        
-        NSLog(@"position %@",NSStringFromCGPoint(position));
-        CGPoint fromPoint = CGPointMake(position.x, position.y + aMin*15);
-        NSValue *prevVal = [NSValue valueWithCGPoint:fromPoint];
-        NSLog(@"fromPoint %@",NSStringFromCGPoint(fromPoint));
-        [moveAnimation setFromValue:prevVal];
-        CGPoint toPoint = CGPointMake(position.x , position.y + aMax*15);
-        [moveAnimation setToValue:[NSValue valueWithCGPoint:toPoint]];
         
         
-        NSLog(@"toPoint %@",NSStringFromCGPoint(toPoint));
-        moveAnimation.removedOnCompletion = NO;
-        moveAnimation.fillMode = kCAFillModeForwards;
         
-        [self.layerGroup addAnimation:moveAnimation forKey:@"flow"];
+        
+//
+//        CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+//       // opacityAnimation.repeatCount         = 1.0;  // Animate only once..
+//    
+//        // Animate from no part of the stroke being drawn to the entire stroke being drawn
+//        opacityAnimation.fromValue = [NSNumber numberWithFloat:fabsf(aMin)];
+//        opacityAnimation.toValue   = [NSNumber numberWithFloat:fabsf(aMax)];
+//        [opacityAnimation setRemovedOnCompletion:NO];
+//        [opacityAnimation setFillMode:kCAFillModeForwards];
+//    
+//        // Experiment with timing to get the appearence to look the way you want
+//        opacityAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+//    
+//        // Add the animation to the circle
+//        [self.layerGroup addAnimation:opacityAnimation forKey:@"drawOpacity"];
+//        
+//        
+//
+//        NSLog(@"last content offset %f and current offset %f",lastContentOffset, scrollView.contentOffset.y);
+//        CGPoint position = self.layerGroup.position;
+//    
+//        NSLog(@"position %@",NSStringFromCGPoint(position));
+//    
+//        
+//        CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+//        
+//        NSLog(@"position %@",NSStringFromCGPoint(position));
+//        CGPoint fromPoint = CGPointMake(position.x, position.y + aMin*15);
+//        NSValue *prevVal = [NSValue valueWithCGPoint:fromPoint];
+//        NSLog(@"fromPoint %@",NSStringFromCGPoint(fromPoint));
+//        [moveAnimation setFromValue:prevVal];
+//        CGPoint toPoint = CGPointMake(position.x , position.y + aMax*15);
+//        [moveAnimation setToValue:[NSValue valueWithCGPoint:toPoint]];
+//        
+//        
+//        NSLog(@"toPoint %@",NSStringFromCGPoint(toPoint));
+//        moveAnimation.removedOnCompletion = NO;
+//        moveAnimation.fillMode = kCAFillModeForwards;
+//        
+//        [self.layerGroup addAnimation:moveAnimation forKey:@"flow"];
 
         
     }
