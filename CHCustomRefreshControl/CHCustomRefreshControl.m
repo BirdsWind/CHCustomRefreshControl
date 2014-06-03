@@ -169,7 +169,7 @@ CGFloat const MaxCONTENTOFFSETY = 90.0;
 }
 - (void)chRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;{
     [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
+	[UIView setAnimationDuration:0.3];
 	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
 	[UIView commitAnimations];
 	
@@ -261,7 +261,7 @@ CGFloat const MaxCONTENTOFFSETY = 90.0;
         
          self.drawStrokeAnimation.fromValue = [NSNumber numberWithFloat:fromStrokeValue]; //[NSNumber numberWithFloat:fabsf(sin(0.5 * M_PI * aMin))];
          self.drawStrokeAnimation.toValue   = [NSNumber numberWithFloat:toStrokeValue];
-        self.drawStrokeAnimation.duration = fabs(toStrokeValue - fromStrokeValue);;
+       // self.drawStrokeAnimation.duration = fabs(toStrokeValue - fromStrokeValue);;
         [self.imageCirle addAnimation: self.drawStrokeAnimation forKey:@"strokeEnd"];
    
         NSLog(@"self.drawStrokeAnimation.fromValue %@",self.drawStrokeAnimation.fromValue);
