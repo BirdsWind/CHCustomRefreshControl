@@ -151,7 +151,7 @@ CGFloat const MaxCONTENTOFFSETY = 90.0;
 	
     
     //TODO: what is this 65?  test use
-	if (scrollView.contentOffset.y <= - 2*chCONTENTOFFSETLIMIT && !_loading) {
+	if (scrollView.contentOffset.y <= - chCONTENTOFFSETLIMIT && !_loading) {
 		
 		if ([_delegate respondsToSelector:@selector(chRefreshControlDelegateDidTriggerRefresh:)]) {
 			[_delegate chRefreshControlDelegateDidTriggerRefresh:self];
